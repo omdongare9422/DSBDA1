@@ -1,0 +1,20 @@
+1D :- Rows Sum(age) color Race
+2D :- Columns Occupation Rows Sum(age)\\ Income color Label Race
+3D :- Columns Occupation, Maritial-Status Rows Sum(age) \\Race color
+Temporal :- Columns Educational-Num Rows SUM(Hours per week) \\Income Color
+Multi :- Columns Sum(Age) Rows Sum(Hours per week) \\ Color income ,shape occupation , size education 
+Tree :- Size Sum(Age), Color Sum(Age), Label Occupation , Label Income 
+Network :- Column Line X , Rows Line Y , Circle Y , Marks [Multiple color Multiple Fields , Detail Relationship1 Label Multiple Fields ] [Line Y :- color Measure Name , Detail Relationship][Circle Y :- Color Node , Label Node , Detail Relationship1]
+
+
+1D :- Drag Sepal Length → Columns
+Click dropdown → Select Histogram
+
+2D :-Drag Sepal Length → Columns
+Drag Sepal Width → Rows
+Drag Species → Color
+
+3D :- Drag Sepal Length → Columns
+Drag Sepal Width → Rows
+Drag Petal Length → Size
+Drag Species → Color

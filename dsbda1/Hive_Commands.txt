@@ -1,0 +1,46 @@
+hive
+
+create database A2;
+use A2;
+
+create table flight(fno int, year int, des varchar(20), delay float);
+desc flight;
+drop table flight;
+
+create table flight(fno int, year int, des varchar(20), delay float)
+row format delimited
+fields terminated by ','
+lines terminated by '\n'
+stored as textfile;
+
+insert into flight values(101,2005,"Mumbai",30.6);
+insert into flight values(102,2006,"Pune",10.2);
+insert into flight values(103,2007,"Kolkatta",9.6);
+
+use A2;
+select * from flight;
+
+gedit f.txt
+pwd
+ls
+
+use A2;
+
+create table flight1(fno int, year int, src varchar(20))
+row format delimited
+fields terminated by ','
+lines terminated by '\n'
+stored as textfile;
+
+desc flight1;
+
+LOAD DATA LOCAL INPATH '/home/cloudera/Desktop/f.txt'
+OVERWRITE INTO TABLE flight1;
+
+select * from flight1;
+select * from flight;
+
+SELECT f1.fno, f1.year, f1.src, f.des, f.delay
+FROM flight1 f1
+JOIN flight f
+ON f1.fno = f.fno AND f1.year = f.year;
